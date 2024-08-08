@@ -39,63 +39,49 @@ The `lite` folder contains the code for the JupyterLite application. The main fi
 
 1. Create a conda environment:
 
----
-```bash
+   ```bash
    conda create -n jupyterlab-iframe-ext --override-channels --strict-channel-priority -c conda-forge -c nodefaults jupyterlab=4 nodejs=20 git copier=7 jinja2-time jupyterlite-core
    conda activate jupyterlab-iframe-ext
-```
----
+   ```
 
 2. Change directory to the `package` folder:
 
----
-```bash
+   ```bash
    cd package
-```
----
+   ```
 
 3. Create a `yarn` environment and install all dependencies:
 
----
-```bash
+   ```bash
    yarn init -y
    yarn
-```
----
+   ```
 
 4. Finally, install the dependencies and the extension, to add the extension in conda environment.
 
----
-```bash
+   ```bash
    pip install -e .
    jupyter labextension develop --overwrite .
-```
----
+   ```
 
 5. **Whenever a new changes are performed**, to sync them with the environment run:
 
----
-```bash
+   ```bash
    jlpm run build
-```
----
+   ```
 
 6. For building the JupyterLite application run the below command in root directory:
 
----
-```bash
+   ```bash
    cd ..
    jupyter lite build --output-dir lite
-```
----
+   ```
 
 7. To start the development server, run the following command:
 
----
-```bash
+   ```bash
    python -m http.server -b 127.0.0.1
-```
----
+   ```
 
    This will start the JupyterLite application and make it available at `http://127.0.0.1:8000`.
    This will start the cBioPortal extension and integrate it with the JupyterLite application.
