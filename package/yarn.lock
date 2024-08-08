@@ -1501,8 +1501,8 @@ __metadata:
   linkType: hard
 
 "@rjsf/core@npm:^5.13.4":
-  version: 5.19.4
-  resolution: "@rjsf/core@npm:5.19.4"
+  version: 5.20.0
+  resolution: "@rjsf/core@npm:5.20.0"
   dependencies:
     lodash: ^4.17.21
     lodash-es: ^4.17.21
@@ -1512,13 +1512,13 @@ __metadata:
   peerDependencies:
     "@rjsf/utils": ^5.19.x
     react: ^16.14.0 || >=17
-  checksum: 470bccf57e518a99ce608fd44ae083bcbf1a2e4271aefd6cdb1e0e0ad382e8efdc47a22c315186fb0ce4b7258203b4f8e37c4d04c95bc6a6ae72e198949802c7
+  checksum: e4ca086a2ef346251d34d3ba79aaf3e9382c03305754750f05c3472567850ecd0c1b80a4aad2003cd8b523a2f8264dace22a3e1ff970260cc5b902c000081601
   languageName: node
   linkType: hard
 
 "@rjsf/utils@npm:^5.13.4":
-  version: 5.19.4
-  resolution: "@rjsf/utils@npm:5.19.4"
+  version: 5.20.0
+  resolution: "@rjsf/utils@npm:5.20.0"
   dependencies:
     json-schema-merge-allof: ^0.8.1
     jsonpointer: ^5.0.1
@@ -1527,7 +1527,7 @@ __metadata:
     react-is: ^18.2.0
   peerDependencies:
     react: ^16.14.0 || >=17
-  checksum: a0996d705ced9aba9318c6c2bb17ce43e1346039ecfb5e2cf69faed6634efbc1dce47c8fb41335030e72cc70d58e79bb108a8cb6bafa32aa30c9d6611e668ff4
+  checksum: 8baeb254e548abeeefecbe6f6cc2fc3ac02503abd22396ec62959172e4c21c5e688e148961504d1c259074b47635aff758de26a9ff8fe82d55e9d05e4570619d
   languageName: node
   linkType: hard
 

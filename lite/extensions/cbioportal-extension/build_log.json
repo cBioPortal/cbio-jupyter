@@ -10,8 +10,8 @@
         {
           "test": "/(?<!\\.raw)\\.css$/",
           "use": [
-            "/home/gautam/Downloads/cbio-jupyter/package/node_modules/style-loader/dist/cjs.js",
-            "/home/gautam/Downloads/cbio-jupyter/package/node_modules/css-loader/dist/cjs.js"
+            "/home/gautam/Downloads/main/cbio-jupyter/package/node_modules/style-loader/dist/cjs.js",
+            "/home/gautam/Downloads/main/cbio-jupyter/package/node_modules/css-loader/dist/cjs.js"
           ]
         },
         {
@@ -81,7 +81,7 @@
           "test": "/\\.js$/",
           "enforce": "pre",
           "use": [
-            "/home/gautam/Downloads/cbio-jupyter/package/node_modules/@jupyterlab/builder/node_modules/source-map-loader/dist/cjs.js"
+            "/home/gautam/Downloads/main/cbio-jupyter/package/node_modules/@jupyterlab/builder/node_modules/source-map-loader/dist/cjs.js"
           ]
         }
       ]
@@ -91,8 +91,8 @@
         "url": false,
         "buffer": false,
         "crypto": false,
-        "path": "/home/gautam/Downloads/cbio-jupyter/package/node_modules/path-browserify/index.js",
-        "process": "/home/gautam/Downloads/cbio-jupyter/package/node_modules/process/browser.js"
+        "path": "/home/gautam/Downloads/main/cbio-jupyter/package/node_modules/path-browserify/index.js",
+        "process": "/home/gautam/Downloads/main/cbio-jupyter/package/node_modules/process/browser.js"
       }
     },
     "watchOptions": {
@@ -102,7 +102,7 @@
     "output": {
       "hashFunction": "sha256",
       "filename": "[name].[contenthash].js",
-      "path": "/home/gautam/Downloads/cbio-jupyter/package/cbioportal-extension/labextension/static",
+      "path": "/home/gautam/Downloads/main/cbio-jupyter/package/cbioportal-extension/labextension/static",
       "publicPath": "auto"
     },
     "plugins": [
@@ -123,9 +123,9 @@
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {
-            "./index": "/home/gautam/Downloads/cbio-jupyter/package/lib/index.js",
-            "./extension": "/home/gautam/Downloads/cbio-jupyter/package/lib/index.js",
-            "./style": "/home/gautam/Downloads/cbio-jupyter/package/style/index.js"
+            "./index": "/home/gautam/Downloads/main/cbio-jupyter/package/lib/index.js",
+            "./extension": "/home/gautam/Downloads/main/cbio-jupyter/package/lib/index.js",
+            "./style": "/home/gautam/Downloads/main/cbio-jupyter/package/style/index.js"
           },
           "shared": {
             "@jupyterlab/application": {
@@ -702,7 +702,7 @@
             "cbioportal-extension": {
               "version": "0.1.0",
               "singleton": true,
-              "import": "/home/gautam/Downloads/cbio-jupyter/package/lib/index.js"
+              "import": "/home/gautam/Downloads/main/cbio-jupyter/package/lib/index.js"
             }
           }
         }
