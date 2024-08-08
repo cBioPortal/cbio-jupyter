@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CbioPortal : JupyterLite</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="Description" content="WASM powered Jupyter running in the browser."/>
+    <link rel="manifest" href="../manifest.webmanifest" />
+
+    <link id="jupyter-lite-main" rel="preload" href="../build/lab/bundle.js?_=6ccb866" main="index" as="script" />
+
+    <script id="jupyter-config-data" type="application/json" data-jupyter-lite-root="..">{}</script>
+
+    <script type="module">
+
+      // importing noteBook content to run as default when notebook opens.
+
+      import { createNotebookContent } from "./notebookContent.js";
+      window.createNotebookContent = createNotebookContent;
+
+    </script>
+    <script>
+      
+      // Variables to store file details and status flags
+      let fileDetails;
+      let isActivated = false;
+      let notebookContent;
+
+      // allowed origins
+
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "https://www.cbioportal.org",
+        "https://deploy-preview-4856--cbioportalfrontend.netlify.app"
+      ];
+
+      function handleLoad() {
+
+        // Notify the opener window that JupyterLite is ready
+        if (window.opener) {
+          window.opener.postMessage({ type: "jupyterlite-ready" }, "*");
+        }
+
+        // handlling events
+
+        window.addEventListener("message", (event) => {
+          // checking where the data is coming from
+          if (allowedOrigins.includes(event.origin)) {
+            fileDetails = event.data;
+            // sending file to the jupyter once everything gets ready
+            canSendFile();
+            notebookContent = window.createNotebookContent({
+              filename: fileDetails.filename,
+            });
+          }
+
+          if (
+            event.data.message ===
+            "JupyterLab extension jupyterlab-iframe-bridge-example is activated!"
+          ) {
+            isActivated = true;
+            canSendFile();
+          }
+
+          // run the file is the file gets saved and we recieve message from extension
+          if (
+            event.data.message === "File saved successfully" &&
+            event.data.type === "from-iframe-to-host-about-file-status"
+          ) {
+            runFile();
+          }
+        });
+      }
+
+      // checking properly to send file only when jupyterlite gets activated and content is ready
+      function canSendFile() {
+        if (fileDetails && isActivated) {
+          sendFileToJupyter();
+        }
+      }
+
+      // function to send-file
+      function sendFileToJupyter() {
+        window.postMessage(
+          {
+            type: "from-host-to-iframe-for-file-saving",
+            filename: fileDetails.filename,
+            fileContent: fileDetails.fileContent,
+            folderName: fileDetails.folderName,
+          },
+          "*"
+        );
+      } 
+
+      // function to run-file
+      function runFile() {
+        window.postMessage(
+          {
+            type: "from-host-to-iframe-for-file-execution",
+            folderName: fileDetails.folderName,
+            notebookContent: notebookContent,
+          },
+          "*"
+        );
+      }
+
+      // handling the jupyterlite activation
+      (async function () {
+        const { pathname, origin, search, hash } = window.location;
+        if (pathname.match(/(index.html|\/?)$/) == null) {
+          window.location.href = `${origin}${pathname}/${search}${hash}`;
+          return;
+        }
+
+        await import("../config-utils.js?_=6ccb866");
+      }).call(this);
+    </script>
+  </head>
+  <body data-notebook="lab" onload="handleLoad()">
+    Loading Content , Please wait...
+  </body>
+</html>
