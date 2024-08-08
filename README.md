@@ -1,5 +1,4 @@
 
-
 # cBioPortal Integration with JupyterLite
 
 ## Overview
@@ -61,7 +60,7 @@ The `lite` folder contains the code for the JupyterLite application. The main fi
 4. Finally, install the dependencies and the extension, to add the extension in conda environment.
 
    ```bash
-   pip install -ve .
+   pip install -e .
    jupyter labextension develop --overwrite .
    ```
 
