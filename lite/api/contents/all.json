@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2024-08-23T15:38:39.463606Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2024-08-23T15:38:39.463606Z",
+      "mimetype": "text/markdown",
+      "name": "Instructions.md",
+      "path": "Instructions.md",
+      "size": 1913,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2024-08-23T15:38:39.463606Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2024-08-23T15:38:39.463606Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
