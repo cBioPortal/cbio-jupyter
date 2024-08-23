@@ -1,7 +1,7 @@
 
 # Instructions for Using Oncoprint Data
 ## Overview
-This notebook provides a visualization of mutation data using an oncoprint heatmap. This visualization helps in understanding the presence and distribution of genetic alterations across various samples.
+This notebook provides a visualization of mutation data using a heatmap. This visualization shows the presence of genetic alterations in each gene across the samples.
 ## Data Requirements
 The data should be in CSV format with the following columns:
 - **hugoGeneSymbol**: Gene symbols.
